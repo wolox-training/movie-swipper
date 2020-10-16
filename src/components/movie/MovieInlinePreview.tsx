@@ -39,7 +39,7 @@ class MovieInlinePreview extends React.Component<Props> {
     const { title, year, vote_average, poster_path } = movie;
 
     return (
-      <TouchableHighlightView scaleFactor={0.98} contentStyle={styles.container} onPress={this.onInlinePreviewPress}>
+      <TouchableHighlightView scaleFactor={0.98} contentStyle={styles.container} onPress={this.onInlinePreviewPress} accessibilityLabel={title} testID={"testId"}>
         <FastImage style={styles.posterImage} source={{ uri: getW185ImageUrl(poster_path) }} />
         <View style={styles.textWrapper}>
           <AppText type="headline" numberOfLines={1} style={styles.title}>

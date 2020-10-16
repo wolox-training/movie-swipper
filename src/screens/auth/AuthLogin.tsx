@@ -79,13 +79,14 @@ class AuthLogin extends React.Component<Props, State> {
     const { createAuthenticatedSessionPending, createAuthenticatedSessionError } = this.props;
     return (
       <ScreenWrapper>
-        <ScrollView contentContainerStyle={styles.scrollContentContainer}>
+        <ScrollView accessible={false} contentContainerStyle={styles.scrollContentContainer}>
           <LoginInput
             label="Username"
             style={styles.usernameInput}
             value={username}
             errorText={createAuthenticatedSessionError && ' '}
             onChangeText={this.onUsernameTextChange}
+            accessibilityLabel={'userInput'}
           />
           <LoginInput
             label="Password"
@@ -94,8 +95,15 @@ class AuthLogin extends React.Component<Props, State> {
             value={password}
             errorText={createAuthenticatedSessionError?.message}
             onChangeText={this.onPasswordTextChange}
+            accessibilityLabel={'passwordInput'}
           />
-          <PrimaryButton stretch text="Log In" style={styles.loginButton} onPress={this.onLoginPress} />
+          <PrimaryButton
+            stretch
+            text="Log In"
+            style={styles.loginButton}
+            onPress={this.onLoginPress}
+            accessibilityLabel={'logInButton'}
+          />
           <TextButton
             text="Forgot the password?"
             style={styles.forgotButton}

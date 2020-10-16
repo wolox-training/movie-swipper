@@ -62,6 +62,7 @@ class MovieDetailsButtons extends React.PureComponent<Props> {
             onPress={this.onFavoritePress}
             Icon={getAddToFavoritesIcon({ isInFavorites })}
             text="Favorite"
+            accessibilityLabel={isInFavorites ? 'favButton' : 'favButtonUnselected'}
           />
         </AuthenticatedLock>
         <IconButton

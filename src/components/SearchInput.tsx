@@ -81,6 +81,7 @@ class SearchInput extends React.PureComponent<Props, State> {
             {getSearchInputBackIcon(!showSearchLabel)}
           </TouchableScale>
           <TextInput
+            accessibilityLabel={'search'}
             ref={this.textInputRef}
             value={value}
             onChangeText={onChangeText}

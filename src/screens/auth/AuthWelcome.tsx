@@ -46,9 +46,9 @@ class AuthWelcome extends React.Component<Props> {
 
     return (
       <ScreenWrapper>
-        <ImageOpacityCycler style={styles.opacityCircler} images={images.welcomeArray} />
-        <View style={styles.container}>
-          <View style={styles.topContainer}>
+        {/* <ImageOpacityCycler style={styles.opacityCircler} images={images.welcomeArray} /> */}
+        <View style={styles.container} accessible={false}>
+          <View style={styles.topContainer} accessible={false}>
             <FastImage style={styles.appLogo} source={images.appLogo} resizeMode="contain" />
             <AppText style={styles.welcomeText} type="title1">
               Welcome to Movie Swiper
@@ -57,15 +57,28 @@ class AuthWelcome extends React.Component<Props> {
               Powered by The Movie Database
             </AppText>
           </View>
-          <View style={styles.bottomContainer}>
+          <View style={styles.bottomContainer} accessible={false}>
             <TextButton
               text="Continue as Guest"
               style={styles.guestButton}
               color={theme.gray.lighter}
               onPress={this.onGuestLoginPress}
+              accessibilityLabel={'continueAsGuest'}
             />
-            <PrimaryButton stretch text="Log In" style={styles.button} onPress={this.onLoginPress} />
-            <SecondaryButton stretch text="Sign Up" style={styles.button} onPress={this.onSignUpPress} />
+            <PrimaryButton
+              stretch
+              text="Log In"
+              style={styles.button}
+              onPress={this.onLoginPress}
+              accessibilityLabel={'logIn'}
+            />
+            <SecondaryButton
+              stretch
+              text="Sign Up"
+              style={styles.button}
+              onPress={this.onSignUpPress}
+              accessibilityLabel={'signUp'}
+            />
           </View>
         </View>
         <PageSpinner visible={createGuestSessionPending} />

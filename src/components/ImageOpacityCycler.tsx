@@ -104,10 +104,13 @@ class ImageOpacityCycler extends React.PureComponent<Props> {
     const { style } = this.props;
 
     return (
-      <View style={style}>
+      <View style={style} accessible={false}>
         {this.renderImages()}
-        <View style={styles.dimmer} />
-        <Animated.View style={[styles.backgroundColor, { opacity: this.contentDimmerAnimationValue }]} />
+        <View style={styles.dimmer} accessible={false} />
+        <Animated.View
+          style={[styles.backgroundColor, { opacity: this.contentDimmerAnimationValue }]}
+          accessible={false}
+        />
       </View>
     );
   }
