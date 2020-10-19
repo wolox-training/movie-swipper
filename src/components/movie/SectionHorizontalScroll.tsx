@@ -36,7 +36,7 @@ class SectionHorizontalScroll extends React.PureComponent<Props> {
     const { title } = sectionData[sectionKey];
 
     return (
-      <View style={styles.container}>
+      <View style={styles.container} accessibilityLabel={title.replace(' ','_')+"_section"}>
         <View style={styles.topContainer}>
           <AppText style={styles.title} type="title2">
             {title}
@@ -48,7 +48,7 @@ class SectionHorizontalScroll extends React.PureComponent<Props> {
             onPress={this.onMorePress}
           />
         </View>
-        <MoviesHorizontalFlatList movieIds={movieIds} />
+        <MoviesHorizontalFlatList movieIds={movieIds}  />
       </View>
     );
   }
