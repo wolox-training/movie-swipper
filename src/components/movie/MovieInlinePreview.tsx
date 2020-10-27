@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { InteractionManagerStatic, StyleSheet, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import { NavigationInjectedProps, withNavigation } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -37,9 +37,8 @@ class MovieInlinePreview extends React.Component<Props> {
   render() {
     const { movie } = this.props;
     const { title, year, vote_average, poster_path } = movie;
-
     return (
-      <TouchableHighlightView scaleFactor={0.98} contentStyle={styles.container} onPress={this.onInlinePreviewPress}>
+      <TouchableHighlightView scaleFactor={0.98} contentStyle={styles.container} onPress={this.onInlinePreviewPress} accessibilityLabel={title.replace(' ', '_')}  >
         <FastImage style={styles.posterImage} source={{ uri: getW185ImageUrl(poster_path) }} />
         <View style={styles.textWrapper}>
           <AppText type="headline" numberOfLines={1} style={styles.title}>

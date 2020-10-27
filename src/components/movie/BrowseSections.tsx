@@ -34,6 +34,7 @@ class BrowseSections extends React.PureComponent<Props> {
         keyExtractor={sectionKey => sectionKey}
         renderItem={this.renderSectionHorizontalScroll}
         showsVerticalScrollIndicator={false}
+        accessibilityLabel={"browseSectionsList"}
       />
     );
   }

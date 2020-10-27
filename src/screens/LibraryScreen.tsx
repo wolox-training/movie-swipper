@@ -46,7 +46,7 @@ class Library extends React.PureComponent<Props> {
 
       const Icon = librarySectionIcons[sectionKey];
 
-      return <BlockButton key={sectionKey} text={title} Icon={Icon} onPress={onPress} />;
+      return <BlockButton key={sectionKey} text={title} Icon={Icon} onPress={onPress} accessibilityLabel={sectionKey}/>;
     });
   };
 
