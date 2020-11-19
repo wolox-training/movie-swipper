@@ -11,6 +11,7 @@ import MoviePreview, { MoviePreviewProps } from './MoviePreview';
 type Props = {
   movieIds: MovieId[];
   moviePreviewAdditionalProps?: Partial<MoviePreviewProps>;
+  idTest?: string;
 };
 
 /* ------------- Component ------------- */
@@ -28,11 +29,12 @@ class MoviesHorizontalList extends React.PureComponent<Props> {
   );
 
   render() {
-    const { movieIds } = this.props;
+    const { movieIds,idTest } = this.props;
     const isEmpty = movieIds.length === 0;
 
     return (
       <FlatList
+        testID={idTest}
         horizontal
         style={styles.list}
         data={movieIds}

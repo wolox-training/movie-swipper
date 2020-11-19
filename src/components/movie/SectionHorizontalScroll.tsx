@@ -48,7 +48,7 @@ class SectionHorizontalScroll extends React.PureComponent<Props> {
             onPress={this.onMorePress}
           />
         </View>
-        <MoviesHorizontalFlatList movieIds={movieIds}  />
+        <MoviesHorizontalFlatList movieIds={movieIds} idTest={title.replace(' ','_')+"_idHorizontal"} />
       </View>
     );
   }

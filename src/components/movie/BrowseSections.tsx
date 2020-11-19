@@ -35,6 +35,7 @@ class BrowseSections extends React.PureComponent<Props> {
         renderItem={this.renderSectionHorizontalScroll}
         showsVerticalScrollIndicator={false}
         accessibilityLabel={"browseSectionsList"}
+        testID={"browseSectionListId"}
       />
     );
   }
