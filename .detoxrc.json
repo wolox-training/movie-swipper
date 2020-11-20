@@ -14,7 +14,7 @@
       "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
       "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
       "device": {
-        "avdName": "Pixel_XL"
+        "avdName": "Pixel_API_28_AOSP"
       }
     },
     "ios.sim.debug": {
