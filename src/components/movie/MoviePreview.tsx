@@ -19,7 +19,7 @@ import { AppText, TouchableScale } from '../common';
 const { width } = Dimensions.get('window');
 const previewWidth = width * 0.27;
 export const getMoviePreviewHeight = () => previewWidth / theme.specifications.posterAspectRation;
-
+var movieTitle;
 /* ------------- Props and State ------------- */
 type OwnProps = {
   movieId?: MovieId;
@@ -56,8 +56,8 @@ class MoviePreview extends React.PureComponent<Props> {
 
   renderMoviePreview() {
     const { movie, highPriority, withRatingBadge } = this.props;
+    movieTitle=movie.original_title;
     if (!movie) return;
-
     const priority = highPriority ? FastImage.priority.high : FastImage.priority.normal;
     return (
       <>
@@ -72,7 +72,7 @@ class MoviePreview extends React.PureComponent<Props> {
   render() {
     const { movieId } = this.props;
     return (
-      <TouchableScale disabled={!movieId} scaleFactor={0.97} style={styles.container} onPress={this.onPress}>
+      <TouchableScale disabled={!movieId} scaleFactor={0.97} style={styles.container} onPress={this.onPress} accessibilityLabel={movieTitle}>
         {movieId ? this.renderMoviePreview() : this.renderEmptyMoviePreview()}
       </TouchableScale>
     );
