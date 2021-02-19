@@ -11,6 +11,7 @@
     "lint:fix": "yarn lint --fix",
     "compile": "tsc -p .",
     "android:build": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "android:build-debug": "cd android && ./gradlew clean && ./gradlew assembleDebug",
     "ios:build": "xcodebuild -workspace ios/MovieSwiper.xcworkspace -configuration Release -scheme MovieSwiper -destination id=F2DE8491-6FC1-4750-B04D-C5AD1A4D28C4 -derivedDataPath build/MovieSwiper"
   },
   "dependencies": {
