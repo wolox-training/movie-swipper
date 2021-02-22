@@ -107,7 +107,7 @@ class MovieCard extends React.PureComponent<Props, State> {
     const { poster_path } = movie;
 
     return (
-      <TouchableWithoutFeedback onPress={this.onCardPress}>
+      <TouchableWithoutFeedback onPress={this.onCardPress} accessibilityLabel={movie.original_title}>
         <View style={styles.container}>
           <MovieCardPosterImage path={poster_path} style={styles.card} />
           <InnerShadow position="top" startOpacity={0.5} size={80} />

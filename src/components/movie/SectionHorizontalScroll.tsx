@@ -36,7 +36,7 @@ class SectionHorizontalScroll extends React.PureComponent<Props> {
     const { title } = sectionData[sectionKey];
 
     return (
-      <View style={styles.container} accessibilityLabel={title.replace(' ','_')+"_section"}>
+      <View style={styles.container} accessibilityLabel={title.replace(/ /g,'_')+"_section"}>
         <View style={styles.topContainer}>
           <AppText style={styles.title} type="title2">
             {title}

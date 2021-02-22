@@ -5,12 +5,13 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "ios11": "react-native run-ios --simulator='iPhone 11'",
+    "ios11": "react-native run-ios --simulator='iPhone X 12.0'",
     "start": "react-native start",
     "lint": "eslint --ext .js,.jsx,.mjs,.ts,.tsx .",
     "lint:fix": "yarn lint --fix",
     "compile": "tsc -p .",
-    "android:build": "cd android && ./gradlew clean && ./gradlew assembleRelease"
+    "android:build": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "ios:build": "xcodebuild -workspace ios/MovieSwiper.xcworkspace -configuration Release -scheme MovieSwiper -destination id=F2DE8491-6FC1-4750-B04D-C5AD1A4D28C4 -derivedDataPath build/MovieSwiper"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.7.1",
